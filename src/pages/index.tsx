@@ -1,5 +1,6 @@
+import type { HeadFC, PageProps } from "gatsby"
 import React, { useState } from 'react';
-import './App.css';
+import '../styles/App.css';
 
 type FormElement = React.FormEvent<HTMLFormElement>;
 interface Task {
@@ -7,7 +8,7 @@ interface Task {
   done: boolean;
 }
 
-function App(): JSX.Element {
+const IndexPage: React.FC<PageProps> = () => {
 
   const [newTask, setNewTask] = useState<string>('');
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -73,7 +74,7 @@ function App(): JSX.Element {
         className={`block p-2.5 w-full text-gray-900 rounded-l-lg border-l-2 border ${alert ? "bg-red-50 border-red-300" : "bg-gray-50 border-gray-300"}`} 
         onChange={e => {
           setNewTask(e.target.value);
-          if(newTask !== ''){
+          if(e.target.value !== ''){
             setAlert(false);
           }
           }} value={newTask} />
@@ -110,4 +111,6 @@ function App(): JSX.Element {
   );
 }
 
-export default App;
+export default IndexPage;
+
+export const Head: HeadFC = () => <title>Home Page</title>
