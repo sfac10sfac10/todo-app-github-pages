@@ -1,49 +1,118 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby Minimal TypeScript Starter
-</h1>
+# React To-Do App
 
-## 🚀 Quick start
+This is a simple to-do list application built with React, Gatsby, and TailwindCSS. The app allows users to manage their tasks and is hosted using GitHub Pages.
 
-1.  **Create a Gatsby site.**
+## Live Demo
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+The application is live at:
+[https://sfac10sfac10.github.io/todo-app-github-pages/](https://sfac10sfac10.github.io/todo-app-github-pages/)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby -- -ts
-    ```
+---
 
-2.  **Start developing.**
+## Features
 
-    Navigate into your new site’s directory and start it up.
+- Add, edit, and delete tasks
+- Responsive design with TailwindCSS
+- Hosted on GitHub Pages with a custom `pathPrefix`
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+---
 
-3.  **Open the code and start customizing!**
+## Setup Instructions
 
-    Your site is now running at http://localhost:8000!
+### Prerequisites
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+Ensure you have the following installed on your machine:
+- [Node.js](https://nodejs.org/) (version 18 or later recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
 
-4.  **Learn more**
+### Installation
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/sfac10sfac10/todo-app-github-pages.git
+   ```
 
-## 🚀 Quick start (Netlify)
+2. Navigate to the project directory:
+   ```bash
+   cd todo-app-github-pages
+   ```
 
-Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+4. Start the development server:
+   ```bash
+   npm run develop
+   ```
+   The app will be available at `http://localhost:8000`.
+
+### Building for Production
+
+To build the app for production with the correct `pathPrefix`:
+```bash
+npm run build
+```
+
+To preview the production build locally:
+```bash
+npm run serve
+```
+The app will be served at `http://localhost:9000/todo-app-github-pages`.
+
+---
+
+## Deployment
+
+The app is deployed to GitHub Pages using the following process:
+
+1. Build the application with the correct prefix paths:
+   ```bash
+   npm run build
+   ```
+
+2. Deploy to GitHub Pages:
+   ```bash
+   npm run deploy
+   ```
+
+This uses the `gh-pages` package to publish the `public` directory to the `gh-pages` branch.
+
+---
+
+## Continuous Integration
+
+A GitHub Actions workflow (`ci.yml`) is included to:
+- Run tests using CodeQL.
+- Build the app.
+- Deploy the app to GitHub Pages.
+
+To use this workflow:
+- Push changes to the `master` branch.
+- The app will automatically be deployed to GitHub Pages.
+
+---
+
+## Technologies Used
+
+- **React**: For building the user interface.
+- **Gatsby**: For site generation and performance optimizations.
+- **TailwindCSS**: For styling.
+- **GitHub Pages**: For hosting the site.
+
+---
+
+## Notes
+
+The site is hosted at:
+[https://sfac10sfac10.github.io/todo-app-github-pages/](https://sfac10sfac10.github.io/todo-app-github-pages/)
+
+Ensure that any changes to the `pathPrefix` in `gatsby-config.js` match the `homepage` field in `package.json` and the GitHub repository name.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
