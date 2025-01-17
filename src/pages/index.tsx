@@ -62,7 +62,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
   return (
     <div className='w-[95%] max-w-2xl mx-auto '>
-      <h1 className='text-xl font-semibold mt-2'>ToDo App</h1>
+      <h1 className='text-xl font-semibold mt-2'>My ToDo App using Gatsby and Github pages</h1>
       { edit &&
         <p className='mt-2'>Edit the task:</p>
       }
