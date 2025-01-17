@@ -31,7 +31,8 @@ const IndexPage: React.FC<PageProps> = () => {
     else{
       setAlert(true);
     }
-    
+
+    window.history.replaceState(null, '', window.location.pathname);
   }
 
   const addTask = (name: string) => {
