@@ -42,12 +42,23 @@ jobs:
       - name: Build the app
         run: npm run build
 
+      - name: Prepare build artifact directory
+        run: mkdir -p build-artifacts/public && mv public/* build-artifacts/public/
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-artifacts
+          path: build-artifacts
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: build-artifacts
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
